@@ -70,6 +70,7 @@
 
 
   <div id="content">
+  <?php if (empty($page['slider'])): ?>
 
     <?php if (!drupal_is_front_page()): ?>
       <?php if ($title): ?>
@@ -89,8 +90,8 @@
 
       <?php endif; ?>
     <?php endif; ?>
-
-    <?php if (drupal_is_front_page() && !theme_get_setting('homepage_title', 'coworker')): ?>
+    <?php endif; ?>
+    <?php if (drupal_is_front_page() && !theme_get_setting('homepage_title', 'coworker') && (empty($page['slider']))): ?>
       <?php if ($title): ?>
         <div id="page-title">
           <div class="container clearfix">
